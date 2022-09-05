@@ -1,2 +1,2 @@
 #!/bin/bash
-sed 's/.{1}//' /dev/stdin
+cut -c 1 | tr -d '\n' | sort
