@@ -1,2 +1,2 @@
 #!/bin/bash
-unique $1 -u
+uniq $1 -u
