@@ -1,2 +1,2 @@
-#!/bin/bash 
-ls -t | head -n 11 | tail -n 10
+#!/bin/bash
+head -n 11 < $(ls -t) | tail -n 10
