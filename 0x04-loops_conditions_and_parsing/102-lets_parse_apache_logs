@@ -2,4 +2,4 @@
 # Write a Bash script parses an Apache log access files, 
 # and display the visitor IP along with the HTTP status code from the Apache log file.
 
-awk '' apache-access.log
+awk '{print $1 " " $9}' apache-access.log
