@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# prints Best School 10 times. add a Hi after the 9th print
+
+countup=0
+while [ $countup -lt 10 ]
+do
+	if [[ $countup -eq 3 ]]
+	then
+		echo bad luck
+	elif [[ $countup -eq 7 ]]
+	then
+		echo good luck
+	else
+		echo Best School
+	fi
+	countup=$((countup + 1))
+done

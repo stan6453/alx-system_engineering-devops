@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# prints Best School 10 times. add a Hi after the 9th print
+
+countup=0
+while [ $countup -lt 10 ]
+do
+	echo Best School
+	if [[ $countup -eq 8 ]]
+	then
+		echo Hi
+	fi
+	countup=$((countup + 1))
+done

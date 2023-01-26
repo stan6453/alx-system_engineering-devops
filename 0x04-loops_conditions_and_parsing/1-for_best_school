@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# prints Best School 10 times
+
+for placeholder in {1..10}
+do
+echo Best School
+done
+
+placeholder=0
+exit "$placeholder"

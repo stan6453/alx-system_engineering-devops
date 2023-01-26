@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# prints Best School 10 times
+
+countup=0
+until [ $countup -gt 9 ]
+do
+echo Best School
+countup=$((countup + 1))
+done
