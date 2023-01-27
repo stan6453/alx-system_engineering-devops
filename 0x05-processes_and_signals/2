@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Bash (init) script that manages manage_my_process
+
+command=$1
+echo $command
