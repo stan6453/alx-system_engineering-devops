@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <stdlib.h>
+
 
 int infinite_while(void);
 
@@ -20,7 +22,7 @@ int main(void)
 		if (child_id == 0)
 		{
 			/*child process*/
-			_exit(0);
+			exit(0);
 		}
 		else
 		{
