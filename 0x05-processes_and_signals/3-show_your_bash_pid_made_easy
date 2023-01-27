@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Bash script that displays the PID, along with the process name, of processes whose name contain the word bash
 
-./2-show_your_bash_pid | awk '{print $2 "\t" $11}'
+./2-show_your_bash_pid | awk '{print $2 " " $11}'
