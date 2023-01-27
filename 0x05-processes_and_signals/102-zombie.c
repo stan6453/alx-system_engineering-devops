@@ -28,12 +28,13 @@ int main(void)
 		{
 			/*parent process*/
 			printf("Zombie process created, PID: %d\n", child_id);
+			sleep(1);
 		}
 
 	}
 
 	infinite_while();
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
 /**
