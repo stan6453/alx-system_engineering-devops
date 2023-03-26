@@ -1,5 +1,5 @@
 # make changes to our configuration file. Set up your client SSH configuration
-file_line { 'disable PasswordAuthentication and configure private key':
+file_line { 'IdentityFile':
     ensure => 'present',
     path   => '/etc/ssh/ssh_config',
     line   => '    IdentityFile    ~/.ssh/school',
