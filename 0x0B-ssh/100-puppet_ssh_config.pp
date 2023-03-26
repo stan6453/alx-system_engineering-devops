@@ -32,6 +32,6 @@ file_line { 'disable PasswordAuthentication and configure private key':
 
 file_line { 'Disable PasswordAuthentication':
   ensure => 'present',
-  path   => '/etc/ssh/sshd_config',
+  path   => '/etc/ssh/ssh_config',
   line   => 'PasswordAuthentication no',
 }
