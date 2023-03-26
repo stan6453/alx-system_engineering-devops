@@ -15,8 +15,8 @@ $pub_key = @('KEY'/L)
     | KEY
 
 $config_content = @('CON'/L)
-        PasswordAuthentication no
-        IdentityFile    ~/.ssh/school
+    PasswordAuthentication no
+    IdentityFile    ~/.ssh/school
     | CON
 
 ssh_authorized_key { 'school':
