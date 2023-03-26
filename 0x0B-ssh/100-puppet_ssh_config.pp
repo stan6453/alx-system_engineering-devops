@@ -14,6 +14,16 @@ $pub_key = @('KEY'/L)
     08DvVYzarJI8= stanley@kali
     | KEY
 
+$config_content = @('CON'/L)
+    Host *
+        PasswordAuthentication no
+
+    Host    alxserver
+        Hostname        52.201.220.51
+        User    ubuntu
+        IdentityFile    ~/.ssh/school
+    | CON
+
 ssh_authorized_key { 'school':
     ensure => 'present',
     name   => 'school',
@@ -23,15 +33,7 @@ ssh_authorized_key { 'school':
 
 file { '~/.ssh/config':
     path    => '~/.ssh/config',
-    content => '
-    Host *
-        PasswordAuthentication no
-
-    Host    alxserver
-        Hostname        52.201.220.51
-        User    ubuntu
-        IdentityFile    ~/.ssh/school
-    ',
+    content => $config_content,
     mode    => '0744',
     owner   => 'www-data',
     group   => 'www-data',
