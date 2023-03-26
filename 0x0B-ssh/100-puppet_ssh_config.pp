@@ -1,11 +1,4 @@
 # make changes to our configuration file. Set up your client SSH configuration
-
-ssh_authorized_key { 'school':
-    ensure => 'present',
-    name   => 'school',
-    type   => 'ssh-rsa',
-  }
-
 file_line { 'disable PasswordAuthentication and configure private key':
     ensure => 'present',
     path   => '/etc/ssh/ssh_config',
