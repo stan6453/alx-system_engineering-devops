@@ -13,7 +13,7 @@ file_line { 'disable PasswordAuthentication and configure private key':
 }
 
 file_line { 'Disable PasswordAuthentication':
-  ensure => 'present',
-  path   => '/etc/ssh/sshd_config',
-  line   => 'PasswordAuthentication no',
+    ensure  => 'present',
+    path    => '/etc/ssh/sshd_config',
+    line    => 'PasswordAuthentication no',
 }
