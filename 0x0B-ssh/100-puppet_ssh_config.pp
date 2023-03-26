@@ -7,13 +7,13 @@ ssh_authorized_key { 'school':
   }
 
 file_line { 'disable PasswordAuthentication and configure private key':
-    path    => '~/.ssh/config',
+    path    => '/etc/ssh/ssh_config',
     line    => '    IdentityFile    ~/.ssh/school',
     ensure  => 'present',
 }
 
 file_line { 'Disable PasswordAuthentication':
   ensure => 'present',
-  path   => '   /etc/ssh/sshd_config',
+  path   => '/etc/ssh/sshd_config',
   line   => 'PasswordAuthentication no',
 }
