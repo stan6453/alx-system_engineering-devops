@@ -33,4 +33,6 @@ file { '~/.ssh/config':
         IdentityFile    ~/.ssh/school
     ',
     mode    => '0744',
+    owner   => 'www-data',
+    group   => 'www-data',
 }
