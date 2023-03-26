@@ -14,11 +14,6 @@ $pub_key = @('KEY'/L)
     08DvVYzarJI8= stanley@kali
     | KEY
 
-$config_content = @('CON'/L)
-    PasswordAuthentication no
-    IdentityFile    ~/.ssh/school
-    | CON
-
 ssh_authorized_key { 'school':
     ensure => 'present',
     name   => 'school',
@@ -28,6 +23,15 @@ ssh_authorized_key { 'school':
 
 file_line { '~/.ssh/config':
     path    => '~/.ssh/config',
-    content => $config_content,
+    line    => '
+    PasswordAuthentication no
+    IdentityFile    ~/.ssh/school
+    ',
     ensure  => 'present',
+}
+
+file_line { 'Turn off passwd auth':
+  ensure => 'present',
+  path   => '/etc/ssh/sshd_config',
+  line   => 'PasswordAuthentication no',
 }
