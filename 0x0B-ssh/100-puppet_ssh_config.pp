@@ -15,12 +15,7 @@ $pub_key = @('KEY'/L)
     | KEY
 
 $config_content = @('CON'/L)
-    Host *
         PasswordAuthentication no
-
-    Host    alxserver
-        Hostname        52.201.220.51
-        User    ubuntu
         IdentityFile    ~/.ssh/school
     | CON
 
@@ -31,10 +26,8 @@ ssh_authorized_key { 'school':
     key    => $pub_key,
   }
 
-file { '~/.ssh/config':
+file_line { '~/.ssh/config':
     path    => '~/.ssh/config',
     content => $config_content,
-    mode    => '0744',
-    owner   => 'www-data',
-    group   => 'www-data',
+    ensure  => present
 }
