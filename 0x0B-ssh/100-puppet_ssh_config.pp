@@ -23,10 +23,7 @@ ssh_authorized_key { 'school':
 
 file_line { 'disable PasswordAuthentication and configure private key':
     path    => '~/.ssh/config',
-    line    => '
-    PasswordAuthentication no
-    IdentityFile    ~/.ssh/school
-    ',
+    line    => 'IdentityFile    ~/.ssh/school',
     ensure  => 'present',
 }
 
