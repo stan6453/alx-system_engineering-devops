@@ -29,5 +29,5 @@ ssh_authorized_key { 'school':
 file_line { '~/.ssh/config':
     path    => '~/.ssh/config',
     content => $config_content,
-    ensure  => present
+    ensure  => 'present',
 }
