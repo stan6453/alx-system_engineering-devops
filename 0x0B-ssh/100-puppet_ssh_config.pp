@@ -2,11 +2,11 @@
 file_line { 'IdentityFile':
     ensure => 'present',
     path   => '/etc/ssh/ssh_config',
-    line   => '    IdentityFile    ~/.ssh/school',
+    line   => 'IdentityFile    ~/.ssh/school',
 }
 
 file_line { 'Disable PasswordAuthentication':
     ensure => 'present',
     path   => '/etc/ssh/ssh_config',
-    line   => '    PasswordAuthentication no',
+    line   => 'PasswordAuthentication no',
 }
