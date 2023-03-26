@@ -21,7 +21,7 @@ ssh_authorized_key { 'school':
     key    => $pub_key,
   }
 
-file_line { '~/.ssh/config':
+file_line { 'disable PasswordAuthentication and configure private key':
     path    => '~/.ssh/config',
     line    => '
     PasswordAuthentication no
@@ -30,7 +30,7 @@ file_line { '~/.ssh/config':
     ensure  => 'present',
 }
 
-file_line { 'Turn off passwd auth':
+file_line { 'Disable PasswordAuthentication':
   ensure => 'present',
   path   => '/etc/ssh/sshd_config',
   line   => 'PasswordAuthentication no',
