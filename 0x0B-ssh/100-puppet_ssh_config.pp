@@ -21,14 +21,14 @@ ssh_authorized_key { 'school':
     key    => $pub_key,
   }
 
-file_line { 'Turn off passwd auth':
-  ensure => 'present',
-  path   => '/etc/ssh/ssh_config',
-  line   => '    PasswordAuthentication no',
+file_line { 'disable PasswordAuthentication and configure private key':
+    path    => '~/.ssh/config',
+    line    => 'IdentityFile    ~/.ssh/school',
+    ensure  => 'present',
 }
 
-file_line { 'Declare identity file':
+file_line { 'Disable PasswordAuthentication':
   ensure => 'present',
   path   => '/etc/ssh/ssh_config',
-  line   => '    IdentityFile ~/.ssh/school',
+  line   => 'PasswordAuthentication no',
 }
