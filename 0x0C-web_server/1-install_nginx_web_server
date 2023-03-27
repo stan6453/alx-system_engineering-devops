@@ -4,5 +4,4 @@
 
 apt update
 apt install nginx -y
-rm /var/www/html/index.nginx-debian.html
-echo "Hello World!" > /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
