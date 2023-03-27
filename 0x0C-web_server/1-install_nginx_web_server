@@ -2,5 +2,4 @@
 #install nginx web server
 #make a request to the root dir of the server return a page that contains the string 'Hello World!'
 
-apt update
-apt install nginx -y && echo "Hello World!" > /var/www/html/index.nginx-debian.html
+apt update && apt install nginx -y && echo "Hello World!" > /var/www/html/index.nginx-debian.html
