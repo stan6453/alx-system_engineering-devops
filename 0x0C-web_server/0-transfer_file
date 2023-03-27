@@ -11,4 +11,4 @@ if [[ "$#" -ne 4 ]]; then
 	exit 1
 fi
 
-sudo scp "$file" "${user}@${ip}:~" -i "$key"
+scp -i "$key" "$file" "${user}@${ip}:~"
