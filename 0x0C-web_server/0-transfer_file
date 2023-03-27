@@ -16,4 +16,3 @@ if [[ -z "$key" ]]; then
 else
 	scp -i "$key" "$file" "${user}@${ip}:~/"
 fi
-
