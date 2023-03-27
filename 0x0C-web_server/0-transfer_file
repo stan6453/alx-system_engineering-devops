@@ -6,9 +6,13 @@ ip=$2
 user=$3
 key=$4
 
-if [[ "$#" -lt 4 ]]; then
+if [[ "$#" -lt 3 ]]; then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 	exit
 fi
 
-scp -i "$key" "$file" "${user}@${ip}:~"
+if [[ -z "$key" ]]; then
+	scp "$file" "${user}@${ip}:~"
+else
+	scp -i "$key" "$file" "${user}@${ip}:~"
+fi
