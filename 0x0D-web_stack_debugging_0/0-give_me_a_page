@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-#fixes the server at docker containser: holbertonschool/265-0
 sudo service apache2 start
