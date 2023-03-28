@@ -2,7 +2,6 @@
 #install nginx web server
 #make a request to the root dir of the server return a page that contains the string 'Hello World!'
 
-
 # Update package list and install nginx
 apt-get update
 apt-get -y install nginx
