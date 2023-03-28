@@ -22,8 +22,8 @@ server {
 
         server_name _;
         
-        location /redirect_me {
-                return 301 /;
+        if($requested_uri  ~ redirect_me ){
+        	rewrite ^ / permanent;
         }
 
         location / {
