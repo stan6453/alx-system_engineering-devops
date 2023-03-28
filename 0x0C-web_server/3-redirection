@@ -61,6 +61,10 @@ server {
                 #try_files $uri $uri/ =404;
                 return 200 'Hello World!\n';
         }
+        
+        location /redirect_me {
+                return 301 'Moved Permanently';
+        }
 
         # pass PHP scripts to FastCGI server
         #
