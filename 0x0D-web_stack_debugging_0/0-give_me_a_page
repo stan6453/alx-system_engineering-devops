@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # fix the apache2 web server bug in  holbertonschool/265-0 docker container
-service apache2 restart
+/etc/init.d/apache2 start
