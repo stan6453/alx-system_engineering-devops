@@ -108,8 +108,8 @@ sed -i "s#server_name _;#server_name _;\n\n\tlocation /redirect_me {\n\t\treturn
 /etc/nginx/sites-available/default
 
 # default 404 page
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
-sed -i "s#server_name _;#server_name _;\n\n\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}#" \
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sed -i "s#server_name _;#server_name _;\n\n\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\tinternal;\n\t}#" \
 /etc/nginx/sites-available/default
 
 
