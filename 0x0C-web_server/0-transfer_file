@@ -12,7 +12,7 @@ if [[ "$#" -lt 3 ]]; then
 fi
 
 if [[ -z "$key" ]]; then
-	scp -i "~/.ssh/school" "$file" "${user}@${ip}:~/"
+	scp -r -i "~/.ssh/school" "$file" "${user}@${ip}:~/"
 else
-	scp -i "$key" "$file" "${user}@${ip}:~/"
+	scp -r -i "$key" "$file" "${user}@${ip}:~/"
 fi
