@@ -5,7 +5,5 @@
 apt-get update
 apt-get -y install nginx
 apt-get -y install vim
-
 sed -i 's#root /usr/share/nginx/html;#root /var/www/html;#'
-
 service nginx restart
