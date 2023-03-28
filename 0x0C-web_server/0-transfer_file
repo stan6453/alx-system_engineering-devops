@@ -12,7 +12,7 @@ if [[ "$#" -lt 3 ]]; then
 fi
 
 if [[ -e "$key" ]]; then
-	scp -r -i "$key" "$file" "${user}@${ip}:~/"
+	scp -o StrictHostKeyChecking=no -r -i "$key" "$file" "${user}@${ip}:~/"
 else
-	scp -r -i "~/.ssh/school" "$file" "${user}@${ip}:~/"
+	scp -o StrictHostKeyChecking=no -r -i "~/.ssh/school" "$file" "${user}@${ip}:~/"
 fi
