@@ -56,7 +56,7 @@ server {
         server_name _;
         
         location /redirect_me {
-                return 301 'Moved Permanently';
+                return 301 'Moved Permanently\n';
         }
 
         location / {
