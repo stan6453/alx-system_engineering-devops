@@ -103,7 +103,7 @@ server {
 #}
 END
 
-sed -i 's#server_name _;#\tserver_name _;\n\n\tlocation /redirect_me {\n\t\treturn 301 https://quickref.me/bash;\n\t}#' /etc/nginx/sites-available/default
+sed -i 's#server_name _;#server_name _;\n\n\tlocation /redirect_me {\n\t\treturn 301 https://quickref.me/bash;\n\t}#' /etc/nginx/sites-available/default
 
 # Restart nginx
 service nginx restart
