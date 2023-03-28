@@ -2,4 +2,29 @@
 #install nginx web server
 #make a request to the root dir of the server return a page that contains the string 'Hello World!'
 
-apt update -y && apt install nginx -y && echo "Hello World!" > /var/www/html/index.nginx-debian.html
+# Update package list and install nginx
+apt-get update
+apt-get -y install nginx
+
+# Configure nginx to listen on port 80
+sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
+
+# Set up server block to return "Hello World!"
+echo "server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+
+    index index.html;
+
+    location / {
+        return 200 'Hello World!';
+    }
+}" > /etc/nginx/sites-available/hello-world
+
+# Enable the hello-world server block
+ln -s /etc/nginx/sites-available/hello-world /etc/nginx/sites-enabled/
+
+# Restart nginx
+service nginx restart
