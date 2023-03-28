@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#fiexes the server at docker containser: holbertonschool/265-0
+
+#Update package list and install nginx
+apt-get update
+apt-get -y install nginx
+
+sed -i 's#root /usr/share/nginx/html;#root /var/www/html;#'
+
+service nginx restart
