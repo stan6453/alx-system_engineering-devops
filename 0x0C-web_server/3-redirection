@@ -23,7 +23,7 @@ server {
         server_name _;
         
         location /redirect_me {
-                return 301 'Moved Permanently\n';
+                return 301;
         }
 
         location / {
