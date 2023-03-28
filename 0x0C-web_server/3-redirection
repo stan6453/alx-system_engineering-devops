@@ -23,7 +23,7 @@ server {
         server_name _;
         
         location /redirect_me {
-                return 301;
+                return 301 /;
         }
 
         location / {
