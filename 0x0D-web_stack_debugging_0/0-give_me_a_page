@@ -4,6 +4,7 @@
 #Update package list and install nginx
 apt-get update
 apt-get -y install nginx
+apt-get install vim
 
 sed -i 's#root /usr/share/nginx/html;#root /var/www/html;#'
 
