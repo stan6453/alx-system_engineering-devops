@@ -8,7 +8,8 @@ apt-get -y install nginx
 
 #Set up server block to return "Hello World!" for path '/'
 ## Set up server block to return "301 Moved Permanently" rediraction for path '/redirect_me'
-echo "##
+cat <<'END' 
+##
 # You should look at the following URL's in order to grasp a solid understanding
 # of Nginx configuration files in order to fully unleash the power of Nginx.
 # https://www.nginx.com/resources/wiki/start/
@@ -62,7 +63,7 @@ server {
         location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
-                #try_files \$uri \$uri/ =404;
+                #try_files $uri $uri/ =404;
                 return 200 'Hello World!\n';
         }
 
@@ -101,9 +102,10 @@ server {
 #       index index.html;
 #
 #       location / {
-#               try_files \$uri \$uri/ =404;
+#               try_files $uri $uri/ =404;
 #       }
-#}" > /etc/nginx/sites-available/default
+#}
+END > /etc/nginx/sites-available/default
 
 # Restart nginx
 service nginx restart
