@@ -14,5 +14,5 @@ fi
 if [[ -e "$key" ]]; then
 	scp -r -i "$key" "$file" "${user}@${ip}:~/"
 else
-	scp -r -i "~/.ssh/school" "$file" "${user}@${ip}:~/"
+	scp -r "$file" "${user}@${ip}:~/"
 fi
