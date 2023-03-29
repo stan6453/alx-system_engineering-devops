@@ -30,7 +30,7 @@ file-line { 'add multiple lines':
   line  => [
     'server_name _;',
     'location /redirect_me {',
-    'return 301 'https':#quickref.me/bash;',
+    "return 301 'https':#quickref.me/bash;",
     '}',
   ],
 }
