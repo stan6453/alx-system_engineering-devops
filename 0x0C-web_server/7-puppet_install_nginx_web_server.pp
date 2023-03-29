@@ -21,7 +21,7 @@ file { '/var/www/html/404.html':
   mode    => '0744',
   owner   => 'www-data',
   group   => 'www-data',
-  content => 'Ceci n'est pas une page',
+  content => "Ceci n'est pas une page",
 }
 
 file-line { 'add multiple lines':
