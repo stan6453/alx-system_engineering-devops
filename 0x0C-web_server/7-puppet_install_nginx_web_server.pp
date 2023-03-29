@@ -25,9 +25,9 @@ file { '/var/www/html/404.html':
 }
 
 file-line { 'add multiple lines':
-  path	=> '/etc/nginx/sites-available/default',
-  match	=> 'server_name _;',
-  line	=> [
+  path  => '/etc/nginx/sites-available/default',
+  match => 'server_name _;',
+  line  => [
     'server_name _;',
     'location /redirect_me {',
     'return 301 'https':#quickref.me/bash;',
