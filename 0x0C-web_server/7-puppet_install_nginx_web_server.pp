@@ -30,15 +30,15 @@ file-line { 'add multiple lines':
   line	=> [
     'server_name _;',
     'location /redirect_me {',
-    'return 301 https://quickref.me/bash;',
+    'return 301 'https':#quickref.me/bash;',
     '}',
   ],
 }
 
 file-line { 'add multiple lines':
-  path	=> '/etc/nginx/sites-available/default',
-  match	=> 'server_name _;',
-  line	=> [
+  path  => '/etc/nginx/sites-available/default',
+  match => 'server_name _;',
+  line  => [
     'server_name _;',
     'error_page 404 /404.html;',
     'location = /404.html {',
