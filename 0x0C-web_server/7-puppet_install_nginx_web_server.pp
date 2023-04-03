@@ -15,6 +15,7 @@ file { '/var/www/html/index.nginx-debian.html':
   owner   => 'www-data',
   group   => 'www-data',
   content => 'Hello World!',
+  ensure  => 'present',
 }
 
 file { '/var/www/html/404.html':
