@@ -59,9 +59,10 @@ server {
         location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
-                #try_files $uri $uri/ =404;
-                return 200 'Hello World!\n';
+                try_files $uri $uri/ =404;
         }
+        
+        #replace_with_sed
 
         # pass PHP scripts to FastCGI server
         #
@@ -104,9 +105,10 @@ server {
 END
 
 # /redirect_me redirection and default 404 page
-echo -e "Ceci n'est pas une page\r\n" > /var/www/html/404.html
-sed -i "s#server_name _;#server_name _;\n\n\tlocation /redirect_me {\n\t\treturn 301 https://quickref.me/bash;\n\t}\
-\n\n\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\tinternal;\n\t}#" /etc/nginx/sites-available/default
+echo "Hello World!" < index.nginx-debian.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sed -i "s]#replace_with_sed]location /redirect_me {\n\t\treturn 301 https://quickref.me/bash;\n\t}\
+\n\n\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\tinternal;\n\t}]" /etc/nginx/sites-available/default
 
 
 # Restart nginx
