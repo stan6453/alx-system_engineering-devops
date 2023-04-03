@@ -52,7 +52,7 @@ exec { 'sudo service nginx restart':
   path    => ['/usr/bin', '/usr/sbin',],
 }
 
-service { 'sudo service nginx restart':
+service { 'nginx':
   ensure  => 'running',
   name    => 'nginx',
   enabled => 'true',
