@@ -47,6 +47,11 @@ file-line { 'add multiple lines':
   ],
 }
 
+exec { 'sudo service nginx restart':
+  command => 'sudo service nginx restart'
+  path    => ['/usr/bin', '/usr/sbin',],
+}
+
 service { 'sudo service nginx restart':
   ensure  => 'running',
   name    => 'nginx',
