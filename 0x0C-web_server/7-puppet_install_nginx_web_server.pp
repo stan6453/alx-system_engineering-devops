@@ -48,7 +48,7 @@ file-line { 'add multiple lines':
 }
 
 service { 'service nginx restart':
-  name => 'nginx',
-  ensure => 'running',
+  ensure  => 'running',
+  name    => 'nginx',
   enabled => 'true',
 }
