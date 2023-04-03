@@ -62,6 +62,8 @@ server {
                 #try_files $uri $uri/ =404;
                 return 200 'Hello World!\n';
         }
+        
+        #replace_with_sed
 
         # pass PHP scripts to FastCGI server
         #
@@ -103,7 +105,7 @@ server {
 #}
 END
 
-sed -i "s#server_name _;#server_name _;\n\n\tlocation /redirect_me {\n\t\treturn 301 https://quickref.me/bash;\n\t}#" \
+sed -i "s]#replace_with_sed]location /redirect_me {\n\t\treturn 301 https://quickref.me/bash;\n\t}]" \
 /etc/nginx/sites-available/default
 
 # Restart nginx
