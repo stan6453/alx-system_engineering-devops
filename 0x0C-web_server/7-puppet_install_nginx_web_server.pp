@@ -47,8 +47,11 @@ file-line { 'add multiple lines':
   ],
 }
 
-service { 'service nginx restart':
+service { 'sudo service nginx restart':
   ensure  => 'running',
   name    => 'nginx',
   enabled => 'true',
+  start   => 'sudo service nginx start',
+  stop    => 'sudo service nginx stop',
+  restart => 'sudo service nginx restart',
 }
