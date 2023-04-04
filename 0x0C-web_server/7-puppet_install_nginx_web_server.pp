@@ -58,11 +58,11 @@ exec { 'sudo service nginx restart':
   path    => ['/usr/bin', '/usr/sbin'],
 }
 
-service { 'nginx':
-  ensure  => 'running',
-  name    => 'nginx',
-  enabled => 'true',
-  start   => 'sudo service nginx start',
-  stop    => 'sudo service nginx stop',
-  restart => 'sudo service nginx restart',
-}
+# service { 'nginx':
+#   ensure  => 'running',
+#   name    => 'nginx',
+#   enabled => 'true',
+#   start   => 'sudo service nginx start',
+#   stop    => 'sudo service nginx stop',
+#   restart => 'sudo service nginx restart',
+# }
