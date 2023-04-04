@@ -55,7 +55,7 @@ file { '/var/www/html/404.html':
 
 exec { 'sudo service nginx restart':
   command => 'sudo service nginx restart',
-  path    => ['/usr/bin', '/usr/sbin',],
+  path    => ['/usr/bin', '/usr/sbin'],
 }
 
 service { 'nginx':
