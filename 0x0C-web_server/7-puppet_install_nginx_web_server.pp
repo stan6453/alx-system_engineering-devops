@@ -6,7 +6,7 @@
 
 exec { 'apt-get update':
   command => 'apt-get update',
-  path    => ['/usr/bin', '/usr/sbin',],
+  path    => ['/usr/bin', '/usr/sbin'],
 }
 
 package { 'nginx':
