@@ -4,10 +4,15 @@
 #   using curl, it must return a page that contains the string Hello World!
 # - The redirection must be a “301 Moved Permanently”
 
-# exec { 'apt-get update':
-#   command => 'apt-get update',
-#   path    => ['/usr/bin', '/usr/sbin'],
-# }
+exec { 'apt-get update':
+  command => 'apt-get update',
+  path    => ['/usr/bin', '/usr/sbin'],
+}
+
+exec { 'apt-get update':
+  command => 'apt-get install nginx -y',
+  path    => ['/usr/bin', '/usr/sbin'],
+}
 
 package { 'nginx':
   ensure   => 'installed',
@@ -58,11 +63,11 @@ exec { 'sudo service nginx restart':
   path    => ['/usr/bin', '/usr/sbin'],
 }
 
-# service { 'nginx':
-#   ensure  => 'running',
-#   name    => 'nginx',
-#   enabled => 'true',
-#   start   => 'sudo service nginx start',
-#   stop    => 'sudo service nginx stop',
-#   restart => 'sudo service nginx restart',
-# }
+service { 'nginx':
+  ensure  => 'running',
+  name    => 'nginx',
+  enabled => 'true',
+  start   => 'sudo service nginx start',
+  stop    => 'sudo service nginx stop',
+  restart => 'sudo service nginx restart',
+}
