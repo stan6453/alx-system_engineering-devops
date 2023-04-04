@@ -30,28 +30,28 @@ file { '/var/www/html/404.html':
   content => "Ceci n'est pas une page",
 }
 
-file-line { 'add multiple lines':
-  path  => '/etc/nginx/sites-available/default',
-  match => 'server_name _;',
-  line  => [
-    'server_name _;',
-    'location /redirect_me {',
-    "return 301 'https':#quickref.me/bash;",
-    '}',
-  ],
-}
+# file-line { 'add multiple lines':
+#   path  => '/etc/nginx/sites-available/default',
+#   match => 'server_name _;',
+#   line  => [
+#     'server_name _;',
+#     'location /redirect_me {',
+#     "return 301 'https':#quickref.me/bash;",
+#     '}',
+#   ],
+# }
 
-file-line { 'add multiple lines':
-  path  => '/etc/nginx/sites-available/default',
-  match => 'server_name _;',
-  line  => [
-    'server_name _;',
-    'error_page 404 /404.html;',
-    'location = /404.html {',
-    'internal;',
-    '}',
-  ],
-}
+# file-line { 'add multiple lines':
+#   path  => '/etc/nginx/sites-available/default',
+#   match => 'server_name _;',
+#   line  => [
+#     'server_name _;',
+#     'error_page 404 /404.html;',
+#     'location = /404.html {',
+#     'internal;',
+#     '}',
+#   ],
+# }
 
 exec { 'sudo service nginx restart':
   command => 'sudo service nginx restart',
