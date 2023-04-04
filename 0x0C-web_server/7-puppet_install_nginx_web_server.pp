@@ -4,10 +4,10 @@
 #   using curl, it must return a page that contains the string Hello World!
 # - The redirection must be a “301 Moved Permanently”
 
-exec { 'apt-get update':
-  command => 'apt-get update',
-  path    => ['/usr/bin', '/usr/sbin'],
-}
+# exec { 'apt-get update':
+#   command => 'apt-get update',
+#   path    => ['/usr/bin', '/usr/sbin'],
+# }
 
 package { 'nginx':
   ensure   => 'installed',
