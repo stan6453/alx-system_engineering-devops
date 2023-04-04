@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#script to fix nginx bug for webstack debugging 2
+sed -i 's/8080/80/'
