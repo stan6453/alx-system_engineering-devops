@@ -59,7 +59,7 @@ file_line { 'add 404 not found page':
 	",
 }
 
-file_line { 'add  custom HTTP header must be X-Served-By':
+file_line { 'add HTTP header X-Served-By':
   path  => '/etc/nginx/sites-available/default',
   match => '^server {',
   line  => "
