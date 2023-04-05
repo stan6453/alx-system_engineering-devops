@@ -63,7 +63,7 @@ file_line { 'add  custom HTTP header must be X-Served-By':
   path  => '/etc/nginx/sites-available/default',
   match => '^server {',
   line  => "
-add_header X-Served-By \$hostname;
+add_header X-Served-By \$HOSTNAME;
 server {",
 }
 
