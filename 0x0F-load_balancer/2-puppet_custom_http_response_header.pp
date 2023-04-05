@@ -9,10 +9,10 @@ exec { 'apt-get update':
   path    => ['/usr/bin', '/usr/sbin'],
 }
 
-exec { 'apt-get install nginx':
-  command => 'apt-get install nginx -y',
-  path    => ['/usr/bin', '/usr/sbin'],
-}
+# exec { 'apt-get install nginx':
+#   command => 'apt-get install nginx -y',
+#   path    => ['/usr/bin', '/usr/sbin'],
+# }
 
 package { 'nginx':
   ensure   => 'installed',
