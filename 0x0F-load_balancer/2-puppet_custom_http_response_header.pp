@@ -9,10 +9,10 @@ exec { 'apt-get update':
   path    => ['/usr/bin', '/usr/sbin'],
 }
 
-# exec { 'apt-get install nginx':
-#   command => 'apt-get install nginx -y',
-#   path    => ['/usr/bin', '/usr/sbin'],
-# }
+exec { 'apt-get install nginx':
+  command => 'apt-get install nginx -y',
+  path    => ['/usr/bin', '/usr/sbin'],
+}
 
 package { 'nginx':
   ensure   => 'installed',
@@ -43,7 +43,8 @@ file_line { 'add 301 redirection':
 		return 301 https://quickref.me/bash;
 	}
 
-	# pass PHP scripts to FastCGI server",
+	# pass PHP scripts to FastCGI server
+",
 }
 
 file_line { 'add 404 not found page':
@@ -55,7 +56,8 @@ file_line { 'add 404 not found page':
 		internal;
 	}
 
-	# pass PHP scripts to FastCGI server",
+	# pass PHP scripts to FastCGI server
+",
 }
 
 file_line { 'add HTTP header X-Served-By':
