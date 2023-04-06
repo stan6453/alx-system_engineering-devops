@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#display information about subdomains.
+
+domain="$1"
+subdomain="$2"
+
+function get_info(){
+    echo $(dig ${2}.${1} | sed -n '/;; ANSWER SECTION:/{n;p}')
+}
+
+function print_output(){
+    output=$(get_info "$1" "$2")
+    sub_domain="$2"
+    record_type=$(echo "$output" | awk -F' ' '{print $4}')
+    ip_addr=$(echo "$output" | awk -F' ' '{print $5}' )
+    echo "The subdomain $sub_domain is a $record_type record and points to $ip_addr"   
+}
+
+if [[ -n $subdomain ]];then
+    print_output "$domain" "$subdomain"
+else
+    print_output "$domain" "www"
+    print_output "$domain" "lb-01"
+    print_output "$domain" "web-01"
+    print_output "$domain" "web-02"
+fi
