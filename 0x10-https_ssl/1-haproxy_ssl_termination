@@ -1,0 +1,11 @@
+#my config
+frontend web-frontend
+        mode tcp
+        bind *:80
+        bind *:443 ssl crt /etc/letsencrypt/live/www.cyberfrontier.tech/myprivateandpublickeys.pem
+        default_backend web-backend
+
+backend web-backend
+        balance roundrobin
+        server 123781-web-01 35.153.83.180:80 check
+        server 123781-web-02 18.209.223.169:80 check
