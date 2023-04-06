@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 #script to fix nginx bug for webstack debugging 2
-rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
