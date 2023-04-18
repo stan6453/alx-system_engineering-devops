@@ -3,6 +3,6 @@
 
 pkill -f apache2
 chmod 644 /etc/nginx/nginx.conf
-sed -Ei 's[\s*#?\s*user .*[user nginx;[' /etc/nginx/nginx.conf
 sed -Ei 's|(listen (\[::\]:)?80) |\180 |' /etc/nginx/sites-enabled/default
+sed -Ei 's[\s*#?\s*user .*[user nginx;[' /etc/nginx/nginx.conf
 sudo -u nginx service nginx restart
