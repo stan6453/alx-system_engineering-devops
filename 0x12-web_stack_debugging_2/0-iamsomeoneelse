@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#run the `whoami` command using a particular user
+user="$1"
+su "$user" -s /bin/bash -c 'whoami'
