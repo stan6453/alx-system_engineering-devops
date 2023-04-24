@@ -13,7 +13,7 @@ if __name__ == "__main__":
         'https://jsonplaceholder.typicode.com/todos').json()
     user_todos = [todo for todo in all_todos if user['id'] == todo['userId']]
 
-    with open('USER_ID.csv', 'w') as f:
+    with open(str(user['id']) + '.csv', 'w') as f:
         for index, todo in enumerate(user_todos):
             if index == len(user_todos)-1:
                 f.write('"{}","{}","{}","{}"'.format(
