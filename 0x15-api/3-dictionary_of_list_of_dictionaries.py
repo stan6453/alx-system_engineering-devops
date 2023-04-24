@@ -33,5 +33,5 @@ if __name__ == "__main__":
                     del todo['title']
                     users_dict[str(user_id)].append(todo)
 
-with open('todo_all_employees.json', 'w') as file:
-    json.dump(users_dict, file)
+    with open('todo_all_employees.json', 'w') as file:
+        json.dump(users_dict, file)
