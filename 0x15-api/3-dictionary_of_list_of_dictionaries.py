@@ -2,15 +2,16 @@
 """query an API endpoint"""
 
 import json
-from sys import argv
 import requests
+from sys import argv
 
-employee_id = argv[1]
-users = requests.get(
-    'https://jsonplaceholder.typicode.com/users/').json()
-all_todos = requests.get('https://jsonplaceholder.typicode.com/todos').json()
+if __name__ == "__main__":
+    employee_id = argv[1]
+    users = requests.get(
+        'https://jsonplaceholder.typicode.com/users/').json()
+    all_todos = requests.get('https://jsonplaceholder.typicode.com/todos').json()
 
-users_dict = {}
+    users_dict = {}
 
 
 
