@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """query an API endpoint"""
 
-import requests
 from sys import argv
+import requests
 
 employee_id = argv[1]
 user = requests.get(
