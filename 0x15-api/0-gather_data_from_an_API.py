@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """query an API endpoint"""
 
-from sys import argv
 import requests
+import sys
 
-employee_id = argv[1]
+employee_id = sys.argv[1]
 user = requests.get(
     'https://jsonplaceholder.typicode.com/users/{}'.format(employee_id)).json()
 all_todos = requests.get('https://jsonplaceholder.typicode.com/todos').json()
