@@ -22,5 +22,5 @@ for todo in user_todos:
     del todo['title']
     user_dict[user['id']].append(todo)
 
-with open('USER_ID.json', 'w') as file:
+with open('{}.json'.format(user['id']), 'w') as file:
     json.dump(user_dict,file)
