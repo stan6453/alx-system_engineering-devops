@@ -14,9 +14,7 @@ if __name__ == "__main__":
     user_todos = [todo for todo in all_todos if user['id'] == todo['userId']]
 
     with open('USER_ID.csv', 'w') as f:
-        """
         f.write('"USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"\n')
-        """
         for todo in user_todos:
             f.write('"{}","{}","{}","{}"\n'.format(
                 user['id'], user['username'],
