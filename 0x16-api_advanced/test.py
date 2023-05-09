@@ -13,5 +13,6 @@ word_dict={
     'galpa':14
 }
 
-for key,value in sorted(word_dict.items(), key=lambda val: (-val[1], val[0])):
+for key,value in sorted(word_dict.items(),
+                             key=lambda val: (-val[1], val[0])):
     print(key,':', value)
