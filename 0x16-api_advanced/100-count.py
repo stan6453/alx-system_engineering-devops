@@ -42,8 +42,6 @@ def count_words_helper(subreddit, word_list, word_dict={}, after='', count=0):
             return count_words_helper(subreddit, word_list, word_dict,
                                       after=data['data']['after'],
                                       count=count+data['data']['dist'])
-        else:
-            return word_list
     except Exception:
         return None
 
