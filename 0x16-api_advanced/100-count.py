@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """queries the Reddit API, parses the title of all hot articles,
-and prints a sorted count of given keywords """
+and prints a sorted count of given keywords"""
 
 import re
 import requests
@@ -9,7 +9,7 @@ import requests
 def count_words(subreddit, word_list, word_dict={},
                 after='', count=0, not_first=0):
     """queries the Reddit API, parses the title of all hot articles,
-    and prints a sorted count of given keywords """
+    and prints a sorted count of given keywords"""
 
     headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 12; SM-S906N\
                Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML,\
