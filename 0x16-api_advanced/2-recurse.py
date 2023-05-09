@@ -27,6 +27,9 @@ def recurse(subreddit, hot_list=[], after='', count=0):
             headers=headers, params=parameters, allow_redirects=False).json()
         hot_list.extend([post['data']['title']
                         for post in data['data']["children"]])
+        # print('aftre', data['data']['after'])
+        # print('count', count+data['data']['dist'])
+        # print('dist', data['data']['dist'])
         if data['data']['after']:
             return recurse(subreddit, hot_list,
                            after=data['data']['after'],
