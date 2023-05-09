@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" queries the Reddit API, parses the title of all hot articles,
+"""queries the Reddit API, parses the title of all hot articles,
 and prints a sorted count of given keywords """
 
 import re
@@ -7,7 +7,7 @@ import requests
 
 
 def count_words(subreddit, word_list):
-    """ queries the Reddit API, parses the title of all hot articles,
+    """queries the Reddit API, parses the title of all hot articles,
     and prints a sorted count of given keywords """
     word_dict = {}
     count_words_helper(subreddit, word_list, word_dict)
@@ -18,7 +18,7 @@ def count_words(subreddit, word_list):
 
 
 def count_words_helper(subreddit, word_list, word_dict={}, after='', count=0):
-    """ queries the Reddit API, parses the title of all hot articles,
+    """queries the Reddit API, parses the title of all hot articles,
     and prints a sorted count of given keywords """
 
     headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 12; SM-S906N\
@@ -47,7 +47,7 @@ def count_words_helper(subreddit, word_list, word_dict={}, after='', count=0):
 
 
 def filter_word(word_list, word_dict, string):
-    """ filter words count number of words and all it to total in word_dict"""
+    """filter words count number of words and all it to total in word_dict"""
     word_list = [word.lower() for word in word_list]
 
     for word in word_list:
