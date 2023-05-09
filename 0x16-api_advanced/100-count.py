@@ -49,6 +49,7 @@ def count_words_helper(subreddit, word_list, word_dict={}, after='', count=0):
 
 
 def filter_word(word_list, word_dict, string):
+    """ filter words count number of words and all it to total in word_dict"""
     word_list = [word.lower() for word in word_list]
 
     for word in word_list:
