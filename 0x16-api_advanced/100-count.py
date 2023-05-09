@@ -6,18 +6,8 @@ import re
 import requests
 
 
-def count_words(subreddit, word_list):
-    """queries the Reddit API, parses the title of all hot articles,
-    and prints a sorted count of given keywords """
-    word_dict = {}
-    count_words_helper(subreddit, word_list, word_dict)
-
-    for key, value in sorted(word_dict.items(),
-                             key=lambda val: (-val[1], val[0])):
-        print('{}:'.format(key), value)
-
-
-def count_words_helper(subreddit, word_list, word_dict={}, after='', count=0):
+def count_words(subreddit, word_list, word_dict={},
+                after='', count=0, not_first=0):
     """queries the Reddit API, parses the title of all hot articles,
     and prints a sorted count of given keywords """
 
@@ -39,9 +29,13 @@ def count_words_helper(subreddit, word_list, word_dict={}, after='', count=0):
          for post in data['data']["children"]]
 
         if data['data']['after']:
-            return count_words_helper(subreddit, word_list, word_dict,
-                                      after=data['data']['after'],
-                                      count=count+data['data']['dist'])
+            count_words(subreddit, word_list, word_dict,
+                        after=data['data']['after'],
+                        count=count+data['data']['dist'], not_first=1)
+            if not_first == 0:
+                for key, value in sorted(word_dict.items(),
+                                         key=lambda val: (-val[1], val[0])):
+                    print('{}:'.format(key), value)
     except Exception:
         return None
 
