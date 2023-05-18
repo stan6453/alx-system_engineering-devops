@@ -14,4 +14,3 @@ ExecStart=/home/ubuntu/.local/bin/gunicorn --workers 3 --error-logfile /tmp/airb
 
 [Install]
 WantedBy=multi-user.target
-
