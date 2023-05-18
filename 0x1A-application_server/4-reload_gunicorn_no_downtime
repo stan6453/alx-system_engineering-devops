@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# simple Bash script to reload Gunicorn in a graceful way.
+
+for i in $(pgrep gunicorn);do
+    if ! kill -HUP "$i"; then
+        exit 1
+    fi
+done
