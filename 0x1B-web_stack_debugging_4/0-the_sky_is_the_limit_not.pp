@@ -7,5 +7,5 @@ exec { 'increase ulimit':
 
 exec { 'restart-nginx':
   command => 'service nginx restart',
-  path    => ['/etc/init.d/'],
+  path    => ['/etc/init.d/', '/usr/sbin/'],
 }
