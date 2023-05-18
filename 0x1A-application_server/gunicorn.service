@@ -18,7 +18,9 @@ Environment="HBNB_TYPE_STORAGE=db"
 Environment="HBNB_API_HOST=0.0.0.0"
 Environment="HBNB_API_PORT=5000"
 
-ExecStart=/home/ubuntu/.local/bin/gunicorn --workers 3 --error-logfile /tmp/airbnb-error.log --access-logfile /tmp/airbnb-access.log --bind 0.0.0.0:5003 -m 766 web_dynamic.2-hbnb:app
+ExecStart=/home/ubuntu/.local/bin/gunicorn --workers 3 --bind 0.0.0.0:5003 web_dynamic.2-hbnb:app
+StandardError=file:/tmp/airbnb-error.log
+StandardOutput=file:/tmp/airbnb-access.log
 
 [Install]
 WantedBy=multi-user.target
